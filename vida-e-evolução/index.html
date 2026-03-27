@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Jogo da Corrente</title>
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+
+<body>
+
+    <!-- Tela Inicial -->
+    <div id="tela-inicial" class="tela visivel">
+        <h1>Bem-vindo ao Jogo da Corrente</h1>
+        <div class="caixa-instrucoes">
+            <h2>Instruções do jogo</h2>
+            <ol style="text-align: left;">
+                <li>Cada jogador deve pintar de 1 a 4 casas, alternadamente.</li>
+                <li>O jogador que pintar a última casa perde.</li>
+            </ol>
+        </div>
+        <button class="botao" onclick="iniciarJogo()">Começar o Jogo</button>
+    </div>
+
+    <!-- Tela do Jogo -->
+    <div id="tela-jogo" class="tela">
+        <div id="info-jogador">Vez do Jogador 1</div>
+        <div class="linha-jogo">
+            <div id="botoes-jogada">
+                <button class="botao botao-jogada" onclick="jogar(1)">1</button>
+                <button class="botao botao-jogada" onclick="jogar(2)">2</button>
+                <button class="botao botao-jogada" onclick="jogar(3)">3</button>
+                <button class="botao botao-jogada" onclick="jogar(4)">4</button>
+            </div>
+            <div id="tabuleiro"></div>
+        </div>
+        <button class="botao" onclick="reiniciarJogo()">Reiniciar Jogo</button>
+    </div>
+
+    <script src="src/js/script.js"></script>
+
+</body>
+
+</html>

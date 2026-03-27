@@ -1,0 +1,90 @@
+style>body {
+    font-family: Arial, sans-serif;
+    background-color: #78919b;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.botao {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.botao:hover {
+    opacity: 0.9;
+}
+
+#tabuleiro {
+    display: flex;
+    flex-wrap: wrap;
+    width: 660px;
+    margin: 20px auto;
+}
+
+.casa {
+    width: 60px;
+    height: 60px;
+    margin: 2px;
+    background-color: #ccc;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.jogador1 {
+    background-color: #2196F3;
+}
+
+.jogador2 {
+    background-color: #f44336;
+}
+
+#info-jogador {
+    font-size: 22px;
+    margin: 20px;
+}
+
+.linha-jogo {
+    display: flex;
+    justify-content: center;
+}
+
+#botoes-jogada {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.caixa-instrucoes {
+    background-color: white;
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.caixa-instrucoes h2 {
+    margin-top: 0;
+}
+
+.botao-jogada {
+    color: white;
+}
+
+.tela {
+    display: none;
+}
+
+.visivel {
+    display: block;
+}
