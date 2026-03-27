@@ -1,0 +1,207 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Comic Sans MS", "Comic Sans", ;
+  background: linear-gradient(135deg, #edeef0, #a1b7c2);
+  color: #4b4f55;
+  min-height: 100vh;
+}
+
+.page-wrapper {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 70px;
+  color: #ffffff;
+   -webkit-text-stroke-width: 1px; /* Largura da borda */
+  -webkit-text-stroke-color: rgb(71, 153, 219); /* Cor da borda */
+
+}
+
+.subtitle {
+  margin-top: 8px;
+  font-size: 1.1rem;
+  color: #292a2b;
+}
+
+.start-card, .mission-content {
+  background: rgba(247, 242, 242, 0.88);
+  border: 3px dashed #2c2e2e;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.14);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.mission-btn,
+.link-btn,
+.quiz-btn {
+  background: linear-gradient(120deg, #e4f4f7, #b8d2eb);
+  border: 0;
+  border-radius: 14px;
+  color: #6a6d70;
+  
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.mission-btn:hover,
+.link-btn:hover,
+.quiz-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.24);
+}
+
+.mission-content h2,
+.mission-content p {
+  margin: 0 0 10px;
+}
+
+.image-options {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.image-card {
+  border: 3px solid #f7a8df;
+  border-radius: 16px;
+  padding: 10px;
+  width: 150px;
+  text-align: center;
+  background: #faf8ff;
+  cursor: pointer;
+}
+
+.image-card:hover {
+  transform: translateY(-2px);
+}
+
+.image-card img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.mission-image {
+  width: 180px;
+  margin: auto;
+  display: block;
+}
+
+.feedback {
+  margin-top: 12px;
+  font-weight: 900;
+  font-size: 1.05rem;
+  min-height: 24px;
+}
+
+.success {
+  color: #008a36;
+}
+
+.error {
+  color: #c41b1b;
+}
+
+.quiz-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 50px);
+  gap: 6px;
+  margin: 14px auto;
+  width: fit-content;
+  background: #9fadad;
+  padding: 8px;
+  border-radius: 12px;
+}
+
+.cell {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+}
+
+.cell.empty {
+  background: #fff7b8;
+}
+
+.cell.wall {
+  background: #3057a7;
+}
+
+.cell.robot {
+  background: #e94f6f;
+  color: white;
+}
+
+.cell.goal {
+  background: #38b000;
+  color: white;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.mission-image,
+#grid {
+  margin: auto;
+}
+
+.nav-links {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.maze-info {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+footer {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #3b4b6a;
+}

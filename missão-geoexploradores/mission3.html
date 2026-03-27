@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Missão 3 - GeoExploradores</title>
+  <link rel="stylesheet" href="src/css/style.css"/>
+</head>
+<body data-page="mission3">
+  <div class="mission-content">
+    <h2>Missão 3: Labirinto Geométrico</h2>
+    <p>Leve o robô até a bandeira 🏁 sem passar por paredes.</p>
+    <div class="maze-info">Nível: <span id="level-label">1</span> / 3</div>
+    <div class="grid" id="grid"></div>
+    <div class="controls">
+      <button onclick="move('up')">⬆️</button>
+      <button onclick="move('left')">⬅️</button>
+      <button onclick="move('down')">⬇️</button>
+      <button onclick="move('right')">➡️</button>
+    </div>
+    <div id="mission3-feedback" class="feedback"></div>
+    <div class="nav-links">
+      <a class="link-btn" href="index.html">🏠 Voltar ao Início</a>
+    </div>
+  </div>
+
+  <script src="src/js/script.js"></script>
+</body>
+</html>
