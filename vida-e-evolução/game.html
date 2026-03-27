@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Jogo - Corrente</title>
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <header>
+            <h1>Jogo da Corrente</h1>
+            <p class="subtitle">Quem pintar a última casa perde. Estratégia é a chave!</p>
+        </header>
+
+        <section class="mision-box">
+            <div class="game-settings">
+                <label for="selecionar-jogadores">Número de jogadores</label>
+                <select id="selecionar-jogadores" onchange="selecionarNumJogadores(this.value)">
+                    <option value="2" selected>2 jogadores</option>
+                    <option value="3">3 jogadores</option>
+                    <option value="4">4 jogadores</option>
+                </select>
+            </div>
+
+            <div id="status-jogo" class="status">Clique em uma corrente para começar.</div>
+            <div id="info-jogador">Vez do Jogador 1</div>
+
+            <div class="linha-jogo">
+                <div id="botoes-jogada" class="botoes-jogada">
+                    <button class="botao botao-jogada" onclick="jogar(1)">1</button>
+                    <button class="botao botao-jogada" onclick="jogar(2)">2</button>
+                    <button class="botao botao-jogada" onclick="jogar(3)">3</button>
+                    <button class="botao botao-jogada" onclick="jogar(4)">4</button>
+                </div>
+                <div id="tabuleiro"></div>
+            </div>
+
+            <div class="nav-links">
+                <button class="link-btn" onclick="reiniciarJogo()">Reiniciar Jogo</button>
+                <br>
+                <a class="link-btn" href="index.html">Voltar ao Início</a>
+            </div>
+        </section>
+    </div>
+    <script src="src/js/script.js"></script>
+</body>
+</html>

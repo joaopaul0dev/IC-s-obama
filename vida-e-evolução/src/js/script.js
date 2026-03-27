@@ -3,16 +3,19 @@ let casas = [];
 let jogadorAtual = 1;
 let proximaCasa = 0;
 let jogadaEmAndamento = false;
+let numJogadores = 2;
 
-function iniciarJogo() {
-    document.getElementById('tela-inicial').classList.remove('visivel');
-    document.getElementById('tela-jogo').classList.add('visivel');
-    criarTabuleiro();
-    atualizarBotoes();
-}
+const coresJogador = {
+    1: 'jogador-color-1',
+    2: 'jogador-color-2',
+    3: 'jogador-color-3',
+    4: 'jogador-color-4'
+};
 
 function criarTabuleiro() {
     const tabuleiro = document.getElementById('tabuleiro');
+    if (!tabuleiro) return;
+
     tabuleiro.innerHTML = '';
     casas = [];
 
@@ -28,47 +31,87 @@ function criarTabuleiro() {
     jogadaEmAndamento = false;
     atualizarMensagem();
     atualizarBotoes();
+    atualizarStatus('Escolha quantas correntes pintar (1 a 4).');
 }
 
 function atualizarMensagem() {
-    document.getElementById('info-jogador').textContent = `Vez do Jogador ${jogadorAtual}`;
+    const info = document.getElementById('info-jogador');
+    if (info) {
+        info.textContent = `Vez do Jogador ${jogadorAtual}`;
+        info.style.color = jogadorAtual <= 4 ? '' : '';
+    }
 }
 
 function atualizarBotoes() {
     const botoes = document.querySelectorAll('.botao-jogada');
-    const cor = jogadorAtual === 1 ? '#2196F3' : '#f44336';
+    const cor = jogadorAtual <= 4 ? getComputedStyle(document.documentElement).getPropertyValue('--') : '';
     botoes.forEach(btn => {
-        btn.style.backgroundColor = cor;
+        btn.style.backgroundColor = ''; // style reset. 
         btn.disabled = jogadaEmAndamento;
+        const playerColor = getColorDoJogador(jogadorAtual);
+        btn.style.border = `2px solid ${playerColor}`;
     });
 }
 
+function getColorDoJogador(jogador) {
+    const map = {
+        1: '#2174e3',
+        2: '#e32639',
+        3: '#f4b500',
+        4: '#2b8f51'
+    };
+    return map[jogador] || '#000';
+}
+
+function selecionarNumJogadores(value) {
+    numJogadores = Number(value);
+    document.getElementById('num-jogadores-label').textContent = `Jogadores: ${numJogadores}`;
+    criarTabuleiro();
+}
+
+function desenharTabuleiroEstilo() {
+    const tab = document.getElementById('tabuleiro');
+    if (!tab) return;
+    tab.style.width = totalCasas <= 22 ? '660px' : '100%';
+}
+
 function jogar(qtde) {
-    if (jogadaEmAndamento || proximaCasa + qtde > totalCasas) {
-        alert("Jogada inválida ou ainda em andamento.");
+    if (jogadaEmAndamento) {
+        atualizarStatus('Ainda em andamento. Aguarde a animação terminar.');
+        return;
+    }
+
+    const restante = totalCasas - proximaCasa;
+    const maximo = Math.min(4, restante);
+    const escolhidas = Math.max(1, Math.min(qtde, maximo));
+
+    if (escolhidas <= 0) {
+        atualizarStatus('Número de correntes inválido. Escolha entre 1 e 4.');
         return;
     }
 
     jogadaEmAndamento = true;
-    const corClasse = jogadorAtual === 1 ? 'jogador1' : 'jogador2';
+    const corClasse = coresJogador[jogadorAtual];
+    let casasRestantes = escolhidas;
 
-    let casasRestantes = qtde;
-    let delay = 0;
+    atualizarStatus(`Jogador ${jogadorAtual} pintará ${escolhidas} corrente(s).`);
 
     const animar = () => {
         if (casasRestantes === 0) {
             if (proximaCasa === totalCasas) {
                 const perdedor = jogadorAtual;
-                const vencedor = jogadorAtual === 1 ? 2 : 1;
+                const vencedor = jogadorAtual % numJogadores + 1;
+                atualizarStatus(`🎉 Jogador ${vencedor} venceu! Jogador ${perdedor} perdeu.`);
                 setTimeout(() => {
                     alert(`Jogador ${vencedor} venceu! Jogador ${perdedor} perdeu.`);
                     reiniciarJogo();
                 }, 300);
             } else {
-                jogadorAtual = jogadorAtual === 1 ? 2 : 1;
+                jogadorAtual = jogadorAtual % numJogadores + 1;
                 jogadaEmAndamento = false;
                 atualizarMensagem();
                 atualizarBotoes();
+                atualizarStatus(`É a vez do Jogador ${jogadorAtual}.`);
             }
             return;
         }
@@ -76,7 +119,7 @@ function jogar(qtde) {
         casas[proximaCasa].classList.add(corClasse);
         proximaCasa++;
         casasRestantes--;
-        setTimeout(animar, 200);
+        setTimeout(animar, 180);
     };
 
     atualizarBotoes();
@@ -85,4 +128,17 @@ function jogar(qtde) {
 
 function reiniciarJogo() {
     criarTabuleiro();
+    atualizarStatus('Jogo reiniciado. Boa sorte!');
+}
+
+function atualizarStatus(text) {
+    const status = document.getElementById('status-jogo');
+    if (status) status.textContent = text;
+}
+
+if (document.getElementById('selecionar-jogadores')) {
+    document.addEventListener('DOMContentLoaded', () => {
+        criarTabuleiro();
+        desenharTabuleiroEstilo();
+    });
 }

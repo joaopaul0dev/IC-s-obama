@@ -1,90 +1,178 @@
-style>body {
-    font-family: Arial, sans-serif;
-    background-color: #78919b;
+* { box-sizing: border-box; }
+body {
     margin: 0;
     padding: 0;
+    font-family: "Poppins", "Segoe UI", sans-serif;
+    color: #fafafa;
+    background: linear-gradient(180deg, #0b0b0b 0%, #151515 45%, #1f1f1f 100%);
+}
+
+.page-wrapper {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 22px;
+}
+
+header {
     text-align: center;
+    margin-bottom: 20px;
 }
 
+h1 {
+    margin: 0;
+    font-size: 2.3rem;
+    color: #f2f2f2;
+    text-shadow: 1px 2px 8px rgba(0, 0, 0, 0.55);
+}
+
+.subtitle {
+    margin-top: 8px;
+    font-size: 1.05rem;
+    color: #d8d8d8;
+}
+
+.home-cards {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.card,
+.link-btn,
 .botao {
-    padding: 10px 20px;
-    margin: 10px;
-    font-size: 18px;
-    border: none;
-    border-radius: 5px;
-    background-color: #4CAF50;
-    color: white;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 220px;
+    padding: 13px 18px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.06));
+    box-shadow: 0 7px 16px rgba(0, 0, 0, 0.6);
+    font-size: 1.02rem;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
+.card:hover,
+.link-btn:hover,
 .botao:hover {
-    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.7);
+}
+
+.tutorial-box,
+.credits-box,
+.mision-box {
+    background: rgba(18, 18, 18, 0.90);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 12px 26px rgba(0,0,0,0.80);
+    max-width: 780px;
+    margin: auto;
+}
+
+.tutorial-box h2,
+.credits-box h2,
+.mision-box h2 {
+    margin-top: 0;
+    color: #7c5151;
+}
+
+.tutorial-box p,
+.credits-box p,
+.mision-box p,
+.tutorial-box li,
+.credits-box li,
+.mision-box li {
+    color: #cae4ff;
+}
+
+#info-jogador {
+    margin-top: 16px;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.4);
+}
+
+#status-jogo {
+    text-align: center;
+    margin-bottom: 12px;
+    color: #c2e7ff;
 }
 
 #tabuleiro {
     display: flex;
     flex-wrap: wrap;
     width: 660px;
-    margin: 20px auto;
+    margin: 16px auto;
+    justify-content: center;
+    border: 2px solid rgba(175, 203, 255, 0.35);
+    border-radius: 14px;
+    padding: 10px;
+    background: rgba(12, 18, 38, 0.72);
 }
 
 .casa {
-    width: 60px;
-    height: 60px;
-    margin: 2px;
-    background-color: #ccc;
+    width: 52px;
+    height: 52px;
+    margin: 3px;
+    background-color: #1f2232;
     clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-    display: inline-block;
-    transition: background-color 0.3s;
+    transition: background-color 0.25s ease, transform 0.15s ease;
+    border: 1px solid #e44717;
 }
 
-.jogador1 {
-    background-color: #2196F3;
+.casa:hover {
+    transform: scale(1.04);
 }
 
-.jogador2 {
-    background-color: #f44336;
+.jogador-color-1 { background-color: #e92525; }
+.jogador-color-2 { background-color: #0a6194; }
+.jogador-color-3 { background-color: #577096; }
+.jogador-color-4 { background-color: #808080; }
+
+.botao-selecao {
+    margin: 4px;
+    min-width: 56px;
+    font-size: 1rem;
+    font-weight: bold;
 }
 
-#info-jogador {
-    font-size: 22px;
-    margin: 20px;
-}
-
-.linha-jogo {
+.game-settings {
     display: flex;
     justify-content: center;
+    gap: 14px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
 }
 
-#botoes-jogada {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-right: 20px;
+footer {
+    text-align: center;
+    margin-top: 18px;
+    color: #9db8ed;
 }
 
-.caixa-instrucoes {
-    background-color: white;
-    max-width: 500px;
-    margin: 40px auto;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+@media (max-width: 760px) {
+    #tabuleiro {
+        width: 100%;
+    }
 
-.caixa-instrucoes h2 {
-    margin-top: 0;
-}
+    .casa {
+        width: 38px;
+        height: 38px;
+        margin:2px;
+    }
 
-.botao-jogada {
-    color: white;
-}
-
-.tela {
-    display: none;
-}
-
-.visivel {
-    display: block;
+    .card, .link-btn, .botao {
+        min-width: 100%;
+    }
 }
