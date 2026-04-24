@@ -1,0 +1,207 @@
+  body {
+    background-color: #121223;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0; padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  header {
+    background-color: #221f38;
+    padding: 20px;
+    text-align: center;
+    font-size: 2rem;
+    color: #f3c623;
+    font-weight: bold;
+    box-shadow: 0 4px 8px #000000a0;
+    position: relative;
+  }
+  main {
+    flex: 1;
+    max-width: 700px;
+    margin: 20px auto;
+    background-color: #2a2a4a;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px #000000cc;
+    position: relative;
+  }
+  .story-text {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  button {
+    background-color: #f3c623;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-weight: bold;
+    color: #121223;
+    transition: background-color 0.3s;
+  }
+  button:hover:not(:disabled) {
+    background-color: #d0a800;
+  }
+  button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+  .question-container {
+    margin-top: 20px;
+  }
+  .question {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+  .options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .options button {
+    background-color: #444680;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+  }
+  .options button:hover:not(:disabled) {
+    background-color: #6060a5;
+  }
+  .correct {
+    background-color: #28a745 !important;
+    color: white;
+  }
+  .wrong {
+    background-color: #dc3545 !important;
+    color: white;
+  }
+  #feedback {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    min-height: 2rem;
+  }
+  #score {
+    margin-top: 25px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: #f3c623;
+  }
+  footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #221f38;
+    color: #999;
+    font-size: 0.9rem;
+  }
+  .image-container {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .image-container img {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 0 12px #000000cc;
+  }
+
+  /* Modal overlay */
+  #modalOverlay {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0; top: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(4px);
+    justify-content: center;
+    align-items: center;
+  }
+  #modalContent {
+    background: #22254a;
+    padding: 30px 40px;
+    border-radius: 12px;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 0 20px #f3c623aa;
+  }
+  #modalContent h2 {
+    color: #f3c623;
+    margin-bottom: 20px;
+  }
+  #modalContent button {
+    margin: 10px 15px;
+    min-width: 140px;
+  }
+
+  #btnNextIntro {
+    width: 100%;
+    background-color: #f3c623;
+    color: #121223;
+    border: none;
+    padding: 27px 0;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  /* Scroll fix when modal open */
+  body.modal-open {
+    overflow: hidden;
+  }
+
+.mission-btn {
+  background: #4CAF50;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  
+}
+
+.mission-btn:hover {
+  background: #45a049;
+}
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+footer a {
+  color: #4b4f55;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.link-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #f3c623;
+  color: #121223;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  cursor: pointer;
+  border: none;
+}
+
+.link-btn:hover {
+  background-color: #d0a800;
+}

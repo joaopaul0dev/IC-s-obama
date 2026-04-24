@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Caverna do Dragão - Desafio da Área</title>
+  <link rel="stylesheet" href="src/css/style.css" />
+</head>
+
+<body>
+
+  <header>
+    <h1>Caverna do Dragão: O Desafio da Matemática</h1>
+    <a class="link-btn" href="creditos.html" style="position: absolute; top: 20px; right: 20px;"> Créditos</a>
+  </header>
+
+  <main>
+    <div id="content"></div>
+
+    <!-- Modal para erro -->
+    <div id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div id="modalContent">
+        <h2 id="modalTitle">Resposta Errada!</h2>
+        <p>Você não conseguiu passar por essa entrada da caverna.</p>
+        <div>
+          <button id="btnRestart">Voltar ao Início</button>
+          <button id="btnRetry">Tentar Novamente</button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>© 2025 - Atividade Gamificada de Matemática | <a href="creditos.html">créditos</a></footer>
+
+  <script src="src/js/script.js"></script>
+</body>
+
+</html>
