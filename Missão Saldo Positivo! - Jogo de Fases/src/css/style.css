@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+body {
+  font-family: 'Open sans', sans-serif;
+  background-color: #f0f9ff;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+header {
+  background: linear-gradient(135deg, #ffa726, #fb8c00);
+  padding: 30px 20px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  margin: 0 0 10px 0;
+  font-size: 2.8em;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+header p {
+  margin: 0;
+  font-size: 1.2em;
+  opacity: 0.9;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+.fase {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #fff3e0;
+  border-left: 10px solid #ff9800;
+  border-radius: 10px;
+  display: none;
+}
+
+.fase.ativa {
+  display: block;
+}
+
+.fase h2 {
+  color: #e65100;
+}
+
+.personagem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.personagem img {
+  width: 80px;
+  margin-right: 15px;
+}
+
+.btn {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 1em;
+}
+
+.btn:hover {
+  background-color: #388e3c;
+}
+
+#btn-iniciar {
+  display: block;
+  margin: 50px auto;
+  font-size: 1.5em;
+  padding: 15px 30px;
+}
+
+#selecao-personagem {
+  text-align: center;
+}
+
+.personagens {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 30px;
+}
+
+.personagem-option {
+  cursor: pointer;
+  padding: 20px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  transition: border-color 0.3s;
+}
+
+#tela-vitoria {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #e8f5e8;
+  border-radius: 15px;
+  margin: 30px auto;
+  max-width: 600px;
+}
+
+#tela-vitoria h2 {
+  color: #4caf50;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+#tela-vitoria p {
+  font-size: 1.2em;
+  margin: 15px 0;
+}
+
+#btn-jogar-novamente {
+  font-size: 1.3em;
+  padding: 15px 30px;
+  margin-top: 30px;
+}
+
+.personagem-option img {
+  width: 100px;
+  height: 100px;
+}
+
+#jogo {
+  margin-top: 30px;
+}
+
+.operacao {
+  margin-bottom: 15px;
+  padding: 15px;
+  background-color: #fff3e0;
+  border-left: 5px solid #ff9800;
+  border-radius: 5px;
+}
+
+.operacao.credito {
+  border-left-color: #4caf50;
+  background-color: #e8f5e8;
+}
+
+.operacao.debito {
+  border-left-color: #f44336;
+  background-color: #ffebee;
+}
+
+.total-final {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #fff3e0;
+  border-radius: 10px;
+  text-align: center;
+}
+
+input[type="number"], input[type="text"] {
+  padding: 5px;
+  font-size: 1em;
+  width: 150px;
+}
+
+.result {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #ffe0b2;
+  margin-top: 30px;
+}
+ 
+main {
+  flex: 1;
+  max-width: 700px;
+  margin: 20px auto;
+  background-color: #f7f7ff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #000000cc;
+  position: relative;
+}
